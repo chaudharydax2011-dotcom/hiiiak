@@ -48,8 +48,16 @@ function applyNames(sender, receiver) {
 
 // ─── Customize Panel ─────────────────────────────────────────────────────────
 function injectCustomizePanel() {
+  // ✅ If URL already has a shared hash (s= param), this is a RECEIVER link
+  //    → hide the customize panel completely. Only sender sees it.
+  const hash = window.location.hash;
+  const isSharedLink = hash && new URLSearchParams(hash.substring(1)).get('s');
+  if (isSharedLink) return;
+
   // Only show panel on index.html (main page)
-  if (!window.location.pathname.match(/(\/|index\.html)$/)) return;
+  const path = window.location.pathname;
+  const isIndex = path.endsWith('/') || path.endsWith('index.html') || path === '';
+  if (!isIndex) return;
 
   const { sender, receiver } = getNames();
 

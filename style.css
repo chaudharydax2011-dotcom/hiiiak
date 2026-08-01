@@ -177,4 +177,62 @@
   text-align: center;
   font-weight: 600;
   min-height: 18px;
-}
+}
+
+/* ── Mobile Responsive ───────────────────────────────────── */
+@media (max-width: 480px) {
+
+  /* Main content */
+  .container {
+    margin: 16px;
+    gap: 16px;
+  }
+
+  .container h1 {
+    font-size: 1.4rem;
+  }
+
+  .container p {
+    font-size: 0.95rem;
+  }
+
+  .btn a {
+    padding: 14px 28px;     /* bigger touch targets */
+    font-size: 1rem;
+    border-radius: 10px;
+  }
+
+  /* Customize panel — full width on mobile */
+  #cust-panel {
+    top: 12px;
+    right: 12px;
+    left: 12px;
+  }
+
+  #cust-toggle {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 14px;
+  }
+
+  #cust-form {
+    min-width: unset;
+    width: 100%;
+    padding: 18px 16px;
+    border-radius: 16px;
+  }
+
+  #cust-form input {
+    padding: 12px 14px;
+    font-size: 1rem;
+  }
+
+  #cust-apply,
+  #cust-copy {
+    padding: 13px;
+    font-size: 1rem;
+    border-radius: 12px;
+  }
+}
+
